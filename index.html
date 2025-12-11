@@ -10,69 +10,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="floating-hearts" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div id="root"></div>
 
-  <main class="scene">
-    <header class="hero">
-      <p class="eyebrow">for my beloved Hajar</p>
-      <h1>A Journey Made for You</h1>
-      <p class="lede">A few sweet steps crafted just for you, my love. Take your time and let each moment remind you how much you mean to me.</p>
-    </header>
+  <!-- React (development) via CDN + Babel for easy in-browser JSX transpile -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <section class="card step active" id="step-1">
-      <div class="step-label">Step 1</div>
-      <h2>Collect violets for me</h2>
-      <p>Tap six glowing flowers to gather them in your heart.</p>
-      <div class="heart-grid" id="heart-grid">
-        <button class="heart-btn" aria-label="Heart 1"></button>
-        <button class="heart-btn" aria-label="Heart 2"></button>
-        <button class="heart-btn" aria-label="Heart 3"></button>
-        <button class="heart-btn" aria-label="Heart 4"></button>
-        <button class="heart-btn" aria-label="Heart 5"></button>
-        <button class="heart-btn" aria-label="Heart 6"></button>
-        <button class="heart-btn" aria-label="Heart 7"></button>
-        <button class="heart-btn" aria-label="Heart 8"></button>
-      </div>
-      <div class="progress-text" id="heart-progress">0 / 6 caught</div>
-      <button class="pill" id="next-1" disabled>Next</button>
-    </section>
+  <script type="text/babel" src="app.jsx"></script>
 
-    <section class="card step" id="step-2">
-      <div class="step-label">Step 2</div>
-      <h2>A question for you, Hajar</h2>
-      <p>What's the first thing you want us to do when we're together again?</p>
-      <textarea id="answer" rows="3" maxlength="120" placeholder="Tell me what your heart desires..."></textarea>
-      <div class="hint" id="answer-hint">Type a few words for me.</div>
-      <button class="pill" id="next-2" disabled>Next</button>
-    </section>
-
-    <section class="card step" id="step-3">
-      <div class="step-label">Step 3</div>
-      <h2>Unlock my message</h2>
-      <p>Tap the petals in order to spell "HAJAR".</p>
-      <div class="puzzle-grid" id="puzzle-grid"></div>
-      <div class="hint" id="puzzle-status">Spell your beautiful name. A wrong tap will reshuffle.</div>
-      <button class="pill" id="reveal" disabled>Reveal the message</button>
-    </section>
-
-    <section class="card final" id="final-message">
-      <div class="final-top">
-        <p class="eyebrow">From me to you, Hajar</p>
-        <h2>What my heart wants to say</h2>
-      </div>
-      <p class="typed" id="typed"></p>
-      <div class="final-note">Every moment without you feels incomplete. You're my favorite thought, my sweetest dream.</div>
-      <div class="final-actions">
-        <button class="pill ghost" id="restart">Replay the journey</button>
-      </div>
-      <div class="confetti" aria-hidden="true" id="confetti"></div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
   <script>
     // Ensure the correct tab title (helps when browser caches a previous title)
     try { document.title = "Guess What"; } catch (e) { /* noop */ }
